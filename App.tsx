@@ -6,6 +6,15 @@
  */
 
 import React from 'react';
+import HomePage from './pages/Homepage';
+function App(): React.JSX.Element {
+  return (
+    <>
+    <HomePage></HomePage>
+    </>
+  )
+}
+/*
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -77,7 +86,7 @@ function App(): React.JSX.Element {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            Test <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
@@ -86,8 +95,8 @@ function App(): React.JSX.Element {
           <Section title="Debug">
             <DebugInstructions />
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
+          <Section title="Test">
+            test
           </Section>
           <LearnMoreLinks />
         </View>
@@ -114,5 +123,5 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
-
+*/
 export default App;
