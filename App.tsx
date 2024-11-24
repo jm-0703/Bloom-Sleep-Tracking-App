@@ -6,12 +6,20 @@
  */
 
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from './pages/Homepage';
+import Mainpage from './pages/Mainpage';
+
+const Stack =  createNativeStackNavigator();
 function App(): React.JSX.Element {
   return (
-    <>
-    <HomePage></HomePage>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Home'>
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Main" component={Mainpage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 /*

@@ -23,6 +23,9 @@ target 'bloom' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+
+  pod 'RNCPushNotificationIOS', :path => '../node_modules/@react-native-community/push-notification-ios'
+
   target 'bloomTests' do
     inherit! :complete
     # Pods for testing

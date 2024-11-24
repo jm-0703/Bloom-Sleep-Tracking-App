@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/JosefinSlab-Italic-VariableFont_wght.ttf",
+      "sha1": "5d76686712eac78ecce1727fe9e048a0f300b64f"
+    },
+    {
+      "path": "assets/fonts/JosefinSlab-VariableFont_wght.ttf",
+      "sha1": "fa275957e95ffac992fe8c6b45b37647d515d9b4"
+    }
+  ]
+}
