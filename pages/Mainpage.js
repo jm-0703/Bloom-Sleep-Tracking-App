@@ -10,15 +10,17 @@ const Mainpage = ()=>{
         requestPermissions: Platform.OS === 'ios',
     });
 
+
     const createAlarm = () => {
         PushNotification.localNotificationSchedule(
             {
                 title:'alarm title',
-                massage:'content',
+                message:'content',
                 date: new Date(Date.now() + 5000),
                 allowWhileIdle:true,
             }
         );
+        Alert.alert("test");
     };
 
     const [isPopup,setPopup] = useState(false);
@@ -27,14 +29,16 @@ const Mainpage = ()=>{
     const [time,setTime] = useState(false);
     const openPopup = () =>{
         setPopup(true);
+
     }
     const closePopup=() =>{
         setPopup(false);
     }
 
     const openSleepMode = () =>{
-        createAlarm();
-        //setSleepMode(true);
+        //createAlarm();
+        Alert.alert("test");
+        setSleepMode(true);
     }
     const closeSleepMode = () =>{
         setSleepMode(false);
