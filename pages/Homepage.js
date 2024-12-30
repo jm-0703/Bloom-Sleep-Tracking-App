@@ -3,7 +3,7 @@ import { SafeAreaView, View, Text, StyleSheet, Image } from "react-native";
 const HomePage = ({navigation})=>{
     useEffect(()=>{
         const timer =  setTimeout(()=>{
-            navigation.replace('Main');
+            navigation.replace('Login');
         },2000);
 
         return () => clearTimeout(timer);

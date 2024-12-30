@@ -1,26 +1,30 @@
 import React,{useState} from "react";
 import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Alert, Modal, Platform } from "react-native";
 import Popup from "./popup";
-import PushNotification  from "react-native-push-notification";
+import PushNotificationIOS from "@react-native-community/push-notification-ios";
 const Mainpage = ()=>{
-    PushNotification.configure({
-        PushNotification: function(notification){
-            console.log('NOTIFICATION:',notification)
-        },
-        requestPermissions: Platform.OS === 'ios',
+    PushNotificationIOS.requestPermissions()
+    .then((permissions) => {
+        console.log('Permission Granted:', permissions);
+    })
+    .catch((error) => {
+        console.log('Permission Denied:', error);
     });
-
+    
+    PushNotificationIOS.requestPermissions();
 
     const createAlarm = () => {
-        PushNotification.localNotificationSchedule(
-            {
-                title:'alarm title',
-                message:'content',
-                date: new Date(Date.now() + 5000),
-                allowWhileIdle:true,
-            }
-        );
-        Alert.alert("test");
+        console.log("Alarm set");
+        PushNotificationIOS.addNotificationRequest({
+            id: "test_alarm", // 알림 ID
+            title: "Test Alarm",
+            body: "This is a test notification.",
+            fireDate: new Date(Date.now() + 60000).toISOString(), // 5초 후 알림
+        });
+        console.log("Notification scheduled");
+        PushNotificationIOS.getPendingNotificationRequests((requests) => {
+            console.log("Pending Notifications:", requests);
+        });
     };
 
     const [isPopup,setPopup] = useState(false);
@@ -36,8 +40,8 @@ const Mainpage = ()=>{
     }
 
     const openSleepMode = () =>{
-        //createAlarm();
-        Alert.alert("test");
+        createAlarm();
+        //Alert.alert("test");
         setSleepMode(true);
     }
     const closeSleepMode = () =>{

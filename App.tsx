@@ -10,14 +10,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from './pages/Homepage';
 import Mainpage from './pages/Mainpage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 const Stack =  createNativeStackNavigator();
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName='Home'>
+        
         <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={Mainpage} />
+        <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
   )
