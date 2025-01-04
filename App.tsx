@@ -12,6 +12,7 @@ import HomePage from './pages/Homepage';
 import Mainpage from './pages/Mainpage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import GoogleOAuth from './pages/GoogleOAuth'
 
 const Stack =  createNativeStackNavigator();
 function App(): React.JSX.Element {
@@ -23,6 +24,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={Mainpage} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="GoogleOAuth" component={GoogleOAuth} />
       </Stack.Navigator>
     </NavigationContainer>
   )
