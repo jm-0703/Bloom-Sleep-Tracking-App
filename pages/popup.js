@@ -125,10 +125,8 @@ const style = StyleSheet.create({
         fontSize:30,
         fontWeight:'bold',
         color:'#FAFDF0',
-
-
-
-    }
+    },
+    
 })
 
 

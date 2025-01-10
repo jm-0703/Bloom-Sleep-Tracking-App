@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, Alert, Modal, Platform } from "react-native";
 import Popup from "./popup";
+import RatePopup from "./ratepopup";
 import PushNotificationIOS from "@react-native-community/push-notification-ios";
 const Mainpage = ()=>{
     PushNotificationIOS.requestPermissions()
@@ -28,6 +29,7 @@ const Mainpage = ()=>{
     };
 
     const [isPopup,setPopup] = useState(false);
+    const [isratePopup, setratePopup] = useState(false);
     const [isSleepMode,setSleepMode] = useState(false);
 
     const [time,setTime] = useState(false);
@@ -46,7 +48,12 @@ const Mainpage = ()=>{
     }
     const closeSleepMode = () =>{
         setSleepMode(false);
+        setratePopup(true);
     }
+    const OnRate = () =>{
+        setratePopup(false);
+    }
+    
     return(
         <SafeAreaView style={styles.Container}>
 
@@ -82,6 +89,15 @@ const Mainpage = ()=>{
                     <Popup onClose={closePopup} setTime={setTime} time={time}/>
 
             </Modal>
+
+            
+            <Modal
+                transparent={true}
+                animationType="slide"
+                visible={isratePopup}>
+                    <RatePopup OnRate={OnRate}/>
+            </Modal>
+            
 
             <Modal
                 transparent={true}

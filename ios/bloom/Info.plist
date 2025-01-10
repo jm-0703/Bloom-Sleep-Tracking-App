@@ -61,15 +61,6 @@
 <string>알람을 위한 권한 요청</string>
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>알람을 위한 권한 요청</string>
-<key>CFBundleURLTypes</key>
-</dict>
 
-<array>
-<dict>
-    <key>CFBundleURLSchemes</key>
-    <array>
-    <string>com.bloom</string> 
-    </array>
 </dict>
-</array>
 </plist>
